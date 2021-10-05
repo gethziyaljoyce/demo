@@ -43,7 +43,7 @@ padding:10px 6px;
 margin-top:7px;
 `;
 
-const LoginBtn = styled.button`
+const LoginLink = styled(Link)`
 width:100px;
 height:50px;
 border-radius : 3px;
@@ -52,12 +52,40 @@ background:black;
 padding:10px 6px;
 margin-top:7px;
 color:#fff;
+text-decoration:none;
+display:inline-block;
+height: 40px;
+line-height:30px;
+padding:0px 15px;
+text-align:center;
+`;
+
+const SignUpLink = styled(Link)`
+width:100px;
+height:50px;
+border-radius : 3px;
+border:1px solid #777;
+background:black;
+padding:10px 6px;
+margin-top:7px;
+color:#fff;
+text-decoration:none;
+display:inline-block;
+height: 40px;
+line-height:30px;
+padding:0px 15px;
+text-align:center;
+`;
+
+const UserLink = styled(Link)`
+text-decoration:none;
+padding:25px;
 `;
 
 function Header() {
     return (
         <StyledHeader>
-            <LogoLink to={"/"} className="logo">
+            <LogoLink to="/" className="logo">
                 <FontAwesomeIcon icon={faStackOverflow} size="2x" />
                <span> Stack<b>OverflowClone</b></span>
             </LogoLink>
@@ -65,9 +93,9 @@ function Header() {
             <form action="" className="search">
                 <SearchInput type="text" placeholder="Search...." />
             </form>
-            <a href="" className="profile">Joyce</a>
-            <LoginBtn>Log In</LoginBtn>
-            <LoginBtn>Sign Up</LoginBtn>
+            <UserLink to="/users" className="profile">Users</UserLink>
+            <LoginLink to="/LogIn">Log In</LoginLink>
+            <SignUpLink to="/SignUp">Sign Up</SignUpLink>
         </StyledHeader>
     );
 }
